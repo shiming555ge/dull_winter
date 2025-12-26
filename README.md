@@ -12,29 +12,6 @@
 
 ---
 
-## 已有资源（可复用）
-
-### 代码资源
-- `PlayerRadiationData.java` - 玩家辐射数据存储系统（Capability）
-- `Pollution.java` - 辐射计算逻辑
-- `ExposureBlock.java`, `IRadioactiveBlock.java` - 辐射方块基类
-- `Config.java` - 配置系统
-
-### 结构文件（.nbt）
-- 运输车.nbt
-- 损坏的运输车.nbt
-- 侧翻的运输车.nbt
-- 遇袭的运输车.nbt
-- 被污染物抓钩.nbt
-- 破损堆芯.nbt
-
-### 资源文件
-- 音效：盖革计数器警报音效（5个等级）
-- 纹理：放射源、被污染的碎片
-- 语言文件：中文/英文
-
----
-
 ## 模块架构设计
 
 ### 1. 钝色辐射（DullRadiation）- 核心模块
