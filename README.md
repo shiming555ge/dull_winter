@@ -457,12 +457,8 @@ mutated_ambient.ogg            # 变异生物环境音
 ```
 me.shiming.DullWinter/
 ├── World/
-│   ├── WorldType/
-│   │   ├── PostApocalypticWorldType.java  # 末世世界类型
-│   │   └── WastelandWorldType.java        # 荒原世界类型
 │   └── Biome/
 │       ├── WastelandBiome.java            # 荒原生物群系
-│       ├── RuinedCityBiome.java           # 废墟城市生物群系
 │       └── ContaminatedForest.java        # 污染森林
 ├── Player/
 │   ├── SpawnHandler.java                  # 出生处理
@@ -481,10 +477,8 @@ me.shiming.DullWinter/
 #### 核心功能
 
 **1. 世界生成**
-- 末世世界类型（破坏后的地形）
 - 荒原生物群系（干燥、荒凉）
 - 污染森林（变异植物）
-- 废墟城市生物群系
 
 **2. 出生系统**
 - 出生点选择
@@ -492,7 +486,7 @@ me.shiming.DullWinter/
 - 初始书籍（末世生存指南）
 - 职业选择（士兵、医生、工程师、拾荒者）
 
-**3. 任务系统**
+**3. 任务系统(或许考虑ftb)** 
 - 主线任务：探索、生存、重建
 - 支线任务：寻找物资、救助NPC
 - 成就系统
@@ -585,25 +579,23 @@ radiation_meter.png           # 辐射计量表
 - 任务完成
 - 获得物品
 
-**说明**:
-- 铁路列车音效由 [Create](https://modrinth.com/mod/create) 模组提供，无需额外录制
-
 ---
 
 ## 开发路线图
 
 ### 阶段 1：核心辐射系统（DullRadiation）
 - [x] 基础Capability系统
-- [ ] 完善辐射计算逻辑
+- [x] 完善辐射计算逻辑
 - [ ] 区块辐射系统
 - [ ] 网络同步
-- [ ] 盖革计数器UI
+- [x] 装备抗辐射配置支持
 
 ### 阶段 2：物品与方块（DullRadiationStuffAddition）
-- [ ] 基础资源（铀、铅）
+- [x] 基础资源（铀、铅）
 - [ ] 防护装备
+- [x] 盖革计数器UI
 - [ ] 抗辐射物品
-- [ ] 核心方块
+- [x] 核心方块
 - [ ] 配方系统
 
 ### 阶段 3：结构生成（DullRadiationStructures）
