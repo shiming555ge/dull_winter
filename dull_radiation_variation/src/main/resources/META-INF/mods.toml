@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="${mod_license}"
+[[mods]]
+modId="dull_radiation_variation"
+version="${mod_version}"
+displayName="${mod_name}"
+description="${mod_description}"
+[[dependencies.dull_radiation_variation]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dull_radiation_variation]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dull_radiation_variation]]
+    modId="dull_radiation"
+    mandatory=true
+    versionRange="${mod_version}"
+    ordering="NONE"
+    side="BOTH"

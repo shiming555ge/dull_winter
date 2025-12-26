@@ -1,0 +1,38 @@
+// Dull Winter - 根项目构建配置
+// 此文件配置所有子项目的通用设置
+
+allprojects {
+    // 应用通用插件
+    apply plugin: 'idea'
+
+    // 配置仓库
+    repositories {
+        mavenCentral()
+        maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://maven.aliyun.com/repository/public/' }
+    }
+
+    // 统一版本管理
+    version = rootProject.mod_version
+    group = rootProject.org_name
+}
+
+subprojects {
+    // 子项目通用配置
+    apply plugin: 'java-library'
+    apply plugin: 'eclipse'
+
+    // Java 编译配置
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    // 统一依赖版本
+    configurations.all {
+        resolutionStrategy {
+            force 'com.google.guava:guava:31.1-jre'
+        }
+    }
+}

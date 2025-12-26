@@ -1,0 +1,12 @@
+{
+  "geiger_counter_alarm": {
+    "subtitle": "dull_radiation.subtitle.geiger_counter_alarm",
+    "sounds": [
+      "dull_radiation:geiger_counter_alarm_1",
+      "dull_radiation:geiger_counter_alarm_2",
+      "dull_radiation:geiger_counter_alarm_3",
+      "dull_radiation:geiger_counter_alarm_4",
+      "dull_radiation:geiger_counter_alarm_5"
+    ]
+  }
+}

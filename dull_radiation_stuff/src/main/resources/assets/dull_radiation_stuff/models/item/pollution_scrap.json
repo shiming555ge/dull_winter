@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dull_radiation:item/pollution_scrap"
+  }
+}
