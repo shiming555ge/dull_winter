@@ -15,9 +15,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  * 盖革计数器物品
  *
  * 功能：
- * - 检测玩家当前辐射水平
- * - 在HUD上显示辐射值
- * - 高辐射时发出警告音
+ * - 检测当前环境辐射强度（通量）
+ * - 在HUD上显示辐射通量和增量
+ * - 实时反映辐射暴露速度
  *
  * @author Shiming
  * @version 2.0.0
@@ -51,21 +51,22 @@ public class GeigerCounterItem extends Item {
     }
 
     /**
-     * 显示当前辐射水平
+     * 显示当前辐射强度（Delta - 上次转化的辐射量）
      */
     @OnlyIn(Dist.CLIENT)
     private void displayRadiationLevel(Player player) {
-        double radiation = RadiationAPI.getPlayerRadiation(player);
-        int level = RadiationAPI.getRadiationLevel(player);
+        double delta = RadiationAPI.getPlayerDelta(player);
 
-        // 在HUD上显示辐射水平
+        // 在HUD上显示辐射强度
         Minecraft mc = Minecraft.getInstance();
         if (mc.gui != null) {
             String message;
             if (isAdvanced) {
-                message = String.format("辐射: %.2f (等级 %d)", radiation, level);
+                // 高级版显示更精确的数值
+                message = String.format("辐射强度: %.3f µSv/h", delta);
             } else {
-                message = String.format("辐射: %.0f", radiation);
+                // 普通版显示简化的数值
+                message = String.format("辐射强度: %.1f µSv/h", delta);
             }
 
             mc.gui.setOverlayMessage(Component.literal(message), false);

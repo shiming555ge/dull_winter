@@ -5,6 +5,7 @@ import me.shiming.DullRadiation.Stuff.items.AntiRadiationItem;
 import me.shiming.DullRadiation.Stuff.items.GeigerCounterItem;
 import me.shiming.DullRadiation.Stuff.items.PollutedItem;
 import me.shiming.DullRadiation.Stuff.items.RadiationArmorItem;
+import me.shiming.DullRadiation.Stuff.items.RadiationDetectorItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -150,7 +151,7 @@ public class ModItems {
 
     /**
      * 盖革计数器
-     * 用于检测辐射水平的手持设备
+     * 用于检测辐射强度（通量）的手持设备
      * 检测范围: 10 格
      */
     public static final RegistryObject<Item> GEIGER_COUNTER = ITEMS.register("geiger_counter",
@@ -168,11 +169,19 @@ public class ModItems {
 
     /**
      * 辐射检测仪
-     * 可以放置的检测设备
+     * 显示玩家当前辐射等级和状态
      */
     public static final RegistryObject<Item> RADIATION_DETECTOR = ITEMS.register("radiation_detector",
-        () -> new Item(new Item.Properties()
-            .stacksTo(64)));
+        () -> new RadiationDetectorItem(new Item.Properties()
+            .stacksTo(1), false));
+
+    /**
+     * 高级辐射检测仪
+     * 显示详细的辐射信息（等级、数值、强度）
+     */
+    public static final RegistryObject<Item> ADVANCED_RADIATION_DETECTOR = ITEMS.register("advanced_radiation_detector",
+        () -> new RadiationDetectorItem(new Item.Properties()
+            .stacksTo(1), true));
 
     // ========== 工具材料 ==========
 

@@ -1,5 +1,6 @@
 package me.shiming.DullRadiation.capability;
 
+import me.shiming.DullRadiation.config.RadiationConfig;
 import net.minecraft.nbt.CompoundTag;
 
 /**
@@ -77,8 +78,9 @@ public class RadiationData implements IRadiationData {
 
     @Override
     public void update() {
-        // 默认更新：使用 20% 的转化率（无防护）
-        update(0.2);
+        // 默认更新：使用配置的基础转化率（无防护）
+        double baseConversionRate = RadiationConfig.COMMON.fluxToRadiationRate.get();
+        update(0.0); // 无防护因子
     }
 
     /**
@@ -87,9 +89,11 @@ public class RadiationData implements IRadiationData {
      *                         例如：0.5 表示减少50%的转化
      */
     public void update(double protectionFactor) {
+        // 从配置文件读取基础转化率
+        double baseConversionRate = RadiationConfig.COMMON.fluxToRadiationRate.get();
+
         // 将 Flux 转化为 Radiation
         // 转化率 = 基础转化率 × (1 - 防护因子)
-        double baseConversionRate = 0.2; // 基础转化率 20%
         double actualConversionRate = baseConversionRate * (1.0 - Math.max(0.0, Math.min(1.0, protectionFactor)));
 
         this.delta = this.flux * actualConversionRate;

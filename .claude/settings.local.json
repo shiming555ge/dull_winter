@@ -10,7 +10,8 @@
       "Bash(ls:*)",
       "Bash(bash gradlew:*)",
       "Bash(gradlew:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(find:*)"
     ]
   }
 }
